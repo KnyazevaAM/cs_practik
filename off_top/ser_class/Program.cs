@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Json;
 
 namespace ser_class
 {
@@ -6,7 +7,14 @@ namespace ser_class
   {
     static void Main(string[] args)
     {
-      Console.WriteLine("Hello World!");
+      student artem = new student();
+      artem.Name = "artem";
+      Console.WriteLine(artem);
+      string json = JsonSerializer.Serialize<student>(artem);
+      Console.WriteLine(json);
+      student restoredPerson = JsonSerializer.Deserialize<student>(json);
+      Console.WriteLine(restoredPerson.ToString());
+
     }
   }
 }
