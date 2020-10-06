@@ -70,7 +70,6 @@ namespace Serialize_People
         private static Person Deserialize()
         {
             Person dsp = new Person();
-
             // Открываем файл для чтения данных	
             FileStream fs = new FileStream("Person.Dat", FileMode.Open);
             // Создаем объект BinaryFormatter для выполнения десериализации
@@ -79,9 +78,8 @@ namespace Serialize_People
             dsp = (Person)bf.Deserialize(fs);
             // Закрываем файл 
             fs.Close();
-
             return dsp;
-
     }
+
   }
 }
